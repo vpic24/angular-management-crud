@@ -1,4 +1,6 @@
-# Gestionale
+#  Restaurant Management
+
+![alt text](https://image.freepik.com/free-vector/retro-restaurant-logo-template_23-2148451519.jpg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
