@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from './service/product.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListDishComponent } from './components/list-dish/list-dish.component';
+import { DetailsDishComponent } from './components/details-dish/details-dish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ListDishComponent
+    ListDishComponent,
+    DetailsDishComponent
   ],
   imports: [
     BrowserModule,

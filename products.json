@@ -55,6 +55,13 @@
       "type": "Antipasto",
       "price": "3",
       "id": 8
+    },
+    {
+      "name": "Impepata di cozze",
+      "desc": "Cozze cotte in pentola, condite con olio d’oliva, aglio, prezzemolo e abbondante pepe nero: non vi servono nemmeno le posate. Munitevi di bruschette calde e di un bel calice di Fiano, fresco e sapido.",
+      "type": "Antipasto",
+      "price": "3",
+      "id": 9
     }
   ]
 }

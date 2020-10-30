@@ -9,7 +9,7 @@ import { Product } from "src/app/models/product";
 })
 export class ListDishComponent implements OnInit {
 
-  //@ViewChild(AddDishComponent) child: AddDishComponent;
+  // @ViewChild(AddDishComponent) child: AddDishComponent;
 
   constructor(private productService: ProductService) { }
 
@@ -21,10 +21,9 @@ export class ListDishComponent implements OnInit {
   flagUpdateProduct: boolean = false;
   spinner: boolean = false;
 
-    //delete a product
-  deleteProduct = function (id: number) {
-    if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id} 
-               SEI SICURO`)) {
+  //delete a product
+  deleteProduct(id: number) {
+    if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id}. SEI SICURO`)) {
       this.productService
         .delete(id).subscribe(
           val => {
@@ -41,11 +40,10 @@ export class ListDishComponent implements OnInit {
           }
         );
     }
+  }
 
-  };
-
-    //get a product by ID number
-  getProduct = function (id: number) {
+  //get a product by ID number
+  getProduct(id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
@@ -54,25 +52,22 @@ export class ListDishComponent implements OnInit {
 
   }
 
-  updateProduct = function (id: number) {
-
+  updateProduct(id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
-        this.child.update(dataDetails);
+        // this.child.update(dataDetails);
       });
   }
 
-    //get all my products
-  fetchData = function () {
+  //get all my products
+  fetchData() {
     this.productService
       .get().subscribe((data: Product) => {
         this.products = data;
         this.spinner = true;
-      })
-
-
-  };
+      });
+  }
 
 
   ngOnInit(): void {

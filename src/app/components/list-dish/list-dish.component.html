@@ -51,7 +51,8 @@
         <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
         <td (click)="updateProduct(product.id); flagAddProduct = true; flagUpdateProduct = true;"><a
             class="update">UPDATE </a></td>
-        <td (click)="getProduct(product.id); flagAddProduct = true; flagGetProduct = true"><a class="info">INFO </a>
+        <td [routerLink]="['/detailsDish',product.id]" routerLinkActive="router-link-active"
+        ><a class="info">INFO </a>
         </td>
 
       </tr>

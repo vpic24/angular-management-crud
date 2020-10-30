@@ -13,7 +13,7 @@ export class AppComponent {
   ];
 
   tagDish = [
-    { title: 'Lista Dei Piatti', url: "/ListDish" },
+    { title: 'Lista Dei Piatti', url: "/listDish" },
     { title: 'Inserisci Un Piatto', url: ""},
     { title: 'Modifica Un Piatto', url: ""}
   ];
