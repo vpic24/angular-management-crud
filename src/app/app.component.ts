@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gestionale';
+  tag = [
+    { title: 'Utenti', url: "" }
+   /*  { title: 'Piatti Disponibili' , url: ""} */
+  ];
+
+  tagDish = [
+    { title: 'Lista Dei Piatti', url: "/ListDish" },
+    { title: 'Inserisci Un Piatto', url: ""},
+    { title: 'Modifica Un Piatto', url: ""}
+  ];
 }

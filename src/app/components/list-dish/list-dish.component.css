@@ -1,0 +1,47 @@
+
+.delete:hover{
+    cursor: pointer;
+    color: red !important;
+    text-decoration: none !important;
+  }
+  
+  .info:hover{
+    cursor: pointer;
+    color: greenyellow !important;
+    text-decoration: none !important;
+  }
+  
+  .delete{
+    color: white !important;
+  }
+  
+  .update{
+    color: white !important;
+  }
+  
+  .info{
+    color: white !important;
+  }
+  
+  .update:hover{
+    cursor: pointer;
+    color: orange !important;
+    text-decoration: none !important;
+  }
+  
+  table {
+    margin-top: 55px;
+    text-align: center;
+  }
+  
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: inherit;
+  }
+  
+  #btnAdd {
+      margin-top: 55px;
+      position: fixed;
+    
+  }
+  
