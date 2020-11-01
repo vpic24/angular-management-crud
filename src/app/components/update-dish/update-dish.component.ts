@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -12,7 +12,6 @@ export class UpdateDishComponent implements OnInit {
 
   constructor(
     private productService : ProductService,
-    private router: Router,
     private route: ActivatedRoute
   ) { }
 

@@ -27,7 +27,7 @@ export class ListDishComponent implements OnInit {
   flagUpdateProduct: boolean = false;
   spinner: boolean = false;
 
-  //delete a product
+  //delete a product  //TODO SI
   deleteProduct(id: number) {
     if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id}. SEI SICURO`)) {
       this.productService
@@ -49,22 +49,22 @@ export class ListDishComponent implements OnInit {
   }
 
   //get a product by ID number
-  getProduct(id: number) {
+  /* getProduct(id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
         this.flagGetProduct = true;
       });
 
-  }
+  } */
 
-  updateProduct(id: number) {    
+ /*  updateProduct(id: number) {    
    this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;        
       });
   }
-
+ */
   //get all my products
   fetchData() {
     this.productService
