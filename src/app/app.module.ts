@@ -10,6 +10,7 @@ import { ProductService } from './service/product.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListDishComponent } from './components/list-dish/list-dish.component';
 import { DetailsDishComponent } from './components/details-dish/details-dish.component';
+import { AddDishComponent } from './components/add-dish/add-dish.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DetailsDishComponent } from './components/details-dish/details-dish.com
     HomeComponent,
     NavbarComponent,
     ListDishComponent,
-    DetailsDishComponent
+    DetailsDishComponent,
+    AddDishComponent
   ],
   imports: [
     BrowserModule,

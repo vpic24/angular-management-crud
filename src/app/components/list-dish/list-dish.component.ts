@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/app/models/product";
+import { Router } from '@angular/router';
+import { AddDishComponent } from 'src/app/components/add-dish/add-dish.component';
+
 
 @Component({
   selector: 'app-list-dish',
@@ -9,9 +12,12 @@ import { Product } from "src/app/models/product";
 })
 export class ListDishComponent implements OnInit {
 
-  // @ViewChild(AddDishComponent) child: AddDishComponent;
+ //  @ViewChild(AddDishComponent) child: AddDishComponent;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router
+    ) { }
 
   products: Product;
   productDetails: Product;
@@ -53,10 +59,10 @@ export class ListDishComponent implements OnInit {
   }
 
   updateProduct(id: number) {
-    this.productService
+   this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
-        // this.child.update(dataDetails);
+       //this.child.update(dataDetails);
       });
   }
 
