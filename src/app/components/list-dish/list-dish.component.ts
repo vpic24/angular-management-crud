@@ -58,11 +58,10 @@ export class ListDishComponent implements OnInit {
 
   }
 
-  updateProduct(id: number) {
+  updateProduct(id: number) {    
    this.productService
       .getById(id).subscribe((dataDetails: Product) => {
-        this.productDetails = dataDetails;
-       //this.child.update(dataDetails);
+        this.productDetails = dataDetails;        
       });
   }
 

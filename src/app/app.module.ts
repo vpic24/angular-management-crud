@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListDishComponent } from './components/list-dish/list-dish.component';
 import { DetailsDishComponent } from './components/details-dish/details-dish.component';
 import { AddDishComponent } from './components/add-dish/add-dish.component';
+import { UpdateDishComponent } from './components/update-dish/update-dish.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddDishComponent } from './components/add-dish/add-dish.component';
     NavbarComponent,
     ListDishComponent,
     DetailsDishComponent,
-    AddDishComponent
+    AddDishComponent,
+    UpdateDishComponent
   ],
   imports: [
     BrowserModule,

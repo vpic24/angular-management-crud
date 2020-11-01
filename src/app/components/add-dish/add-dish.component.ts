@@ -27,16 +27,12 @@ export class AddDishComponent implements OnInit,OnChanges {
     price: new FormControl('', [Validators.required, Validators.pattern('[0.0-9.9]+')]),
   });
 
- ngOnChanges(changes: SimpleChanges): void {
-    console.log(" sono dentro on changes: productDetails: ", changes.productDetails.currentValue);
-    
+ ngOnChanges(changes: SimpleChanges): void {    
     this.update(changes.productDetails.currentValue);
     
   }
  
-  // CHANGED: tolte funzioni anonime e modificate in metodi di classe
 
-  // CHANGED: tolto il reload e inserito al completamento del create
   submitBtn() {
     const name = this.productForm.get('name').value;
     const desc = this.productForm.get('desc').value;
@@ -68,7 +64,6 @@ export class AddDishComponent implements OnInit,OnChanges {
     );
   }
 
-  // CHANGED: lanciata la funzione con l'ngOnInit
   update(product: Product) {
 
     this.flagBtn = true;
@@ -83,7 +78,6 @@ export class AddDishComponent implements OnInit,OnChanges {
     }
   }
 
-  // CHANGED: rimosso il reload sull'errore
   //update a product
   updateBtn(product: Product) {
     if (confirm(`STAI PER AGGIORNARE IL PRODOTTO CON ID:${product.id} SEI SICURO?`)) {
@@ -95,12 +89,11 @@ export class AddDishComponent implements OnInit,OnChanges {
 
           error => {
             alert(`OPS... Si è verificato un errore durante l'aggiornamento`);
-            // window.location.reload();
           },
 
           () => {
             console.log('aggiornamento completato');
-            window.location.reload();
+            this.router.navigate(["/listDish"]);
           }
         );
     }
@@ -112,7 +105,7 @@ export class AddDishComponent implements OnInit,OnChanges {
   }
 
   backHome() {
-    window.location.reload();
+    this.router.navigate(["/listDish"]);
   }
 
   ngOnInit(): void {

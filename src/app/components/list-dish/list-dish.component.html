@@ -49,7 +49,7 @@
         <td> {{product.desc}} </td>
         <td> {{product.price | currency: 'EUR'}} </td>
         <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-        <td  (click)="updateProduct(product.id)"><a class="update">UPDATE </a></td>
+        <td [routerLink]="['/updateDish',product.id]" routerLinkActive="router-link-active"><a class="update">UPDATE </a></td>
         <td [routerLink]="['/detailsDish',product.id]"   routerLinkActive="router-link-active"
         ><a class="info">INFO </a>
         </td>
@@ -59,8 +59,7 @@
     </tbody>
   </table>
    <tr>
-    <app-add-dish [productDetails]="productDetails"> 
-    </app-add-dish>
+    
   </tr>
   <!--<tr>
     <app-dish-details [productDetails]="productDetails" *ngIf="flagGetProduct === true"></app-dish-details>
