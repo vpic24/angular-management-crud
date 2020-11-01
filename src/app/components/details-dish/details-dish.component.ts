@@ -21,7 +21,7 @@ export class DetailsDishComponent implements OnInit {
   id: number;
 
   backHome() {
-    this.router.navigate(["/listDish"]);
+    this.router.navigate(["/dish/listDish"]);
   }
 
   getProduct(id: number) {

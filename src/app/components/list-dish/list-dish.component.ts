@@ -27,7 +27,7 @@ export class ListDishComponent implements OnInit {
   flagUpdateProduct: boolean = false;
   spinner: boolean = false;
 
-  //delete a product  //TODO SI
+  //delete a product  
   deleteProduct(id: number) {
     if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id}. SEI SICURO`)) {
       this.productService

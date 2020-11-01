@@ -53,7 +53,7 @@ export class AddDishComponent implements OnInit,OnChanges {
 
       val => {
         alert(`Prodotto inserito correttamente`);
-        this.router.navigate(["/listDish"]);
+        this.router.navigate(["/dish/listDish"]);
       },
 
       error => {
@@ -93,7 +93,7 @@ export class AddDishComponent implements OnInit,OnChanges {
 
           () => {
             console.log('aggiornamento completato');
-            this.router.navigate(["/listDish"]);
+            this.router.navigate(["/dish/listDish"]);
           }
         );
     }
@@ -105,7 +105,7 @@ export class AddDishComponent implements OnInit,OnChanges {
   }
 
   backHome() {
-    this.router.navigate(["/listDish"]);
+    this.router.navigate(["/dish/listDish"]);
   }
 
   ngOnInit(): void {

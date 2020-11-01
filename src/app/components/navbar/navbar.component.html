@@ -19,7 +19,7 @@
                         type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{tab.title}}</button>
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" *ngFor="let dishTab of tagDishs" 
-                        routerLink = {{dishTab.url}} routerLinkActive="router-link-active"> {{dishTab.title}} 
+                        routerLink = '/dish/{{dishTab.url}}' routerLinkActive="router-link-active"> {{dishTab.title}} 
                         </a>
                     </div>
                 </a>

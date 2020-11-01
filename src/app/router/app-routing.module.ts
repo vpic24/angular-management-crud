@@ -8,13 +8,26 @@ import { UpdateDishComponent } from '../components/update-dish/update-dish.compo
 
 
 const routes: Routes = [
-  {path: "listDish", component: ListDishComponent},
-  {path: "detailsDish/:id", component: DetailsDishComponent },
-  {path: "addDish", component: AddDishComponent },
-  {path: "updateDish/:id", component: UpdateDishComponent },
-  {path: "", component: HomeComponent }
+  {
+    path: 'dish',
 
+    children: [
 
+      { path: "listDish", component: ListDishComponent },
+      { path: "detailsDish/:id", component: DetailsDishComponent },
+      { path: "addDish", component: AddDishComponent },
+      { path: "updateDish/:id", component: UpdateDishComponent },
+
+    ]
+  },
+
+  {
+    path: 'home', redirectTo: '', pathMatch: 'full'
+  },
+
+  {
+    path: '', component: HomeComponent
+  }
 
 ];
 

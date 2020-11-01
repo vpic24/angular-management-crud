@@ -1,7 +1,7 @@
 <!-- <app-spinner *ngIf="spinner!=true"></app-spinner> -->
 
 <div id="btnAdd" class="container">
-  <a [routerLink]="['/addDish']" routerLinkActive="router-link-active"  class="add">
+  <a [routerLink]="['/dish/addDish']" routerLinkActive="router-link-active"  class="add">
     <button type="button" class="btn btn-success " *ngIf="flagAddProduct === false">
       + Aggiungi Prodotto</button>
   </a>
@@ -55,8 +55,8 @@
         <td> {{product.desc}} </td>
         <td> {{product.price | currency: 'EUR'}} </td>
         <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-        <td [routerLink]="['/updateDish',product.id]" routerLinkActive="router-link-active"><a class="update">UPDATE </a></td>
-        <td [routerLink]="['/detailsDish',product.id]"   routerLinkActive="router-link-active"><a class="info">INFO </a>
+        <td [routerLink]="['/dish/updateDish',product.id]" routerLinkActive="router-link-active"><a class="update">UPDATE </a></td>
+        <td [routerLink]="['/dish/detailsDish',product.id]"   routerLinkActive="router-link-active"><a class="info">INFO </a>
         </td>
 
       </tr>
