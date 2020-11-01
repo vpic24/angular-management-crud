@@ -9,12 +9,11 @@ export class AppComponent {
   title = 'gestionale';
   tag = [
     { title: 'Piatti Disponibili', url: "" }
-   /*  { title: 'Piatti Disponibili' , url: ""} */
+   /*  { title: 'Utenti' , url: ""} */
   ];
 
   tagDish = [
     { title: 'Lista Dei Piatti', url: "/listDish" },
     { title: 'Inserisci Un Piatto', url: "/addDish"},
-    { title: 'Modifica Un Piatto', url: ""}
   ];
 }

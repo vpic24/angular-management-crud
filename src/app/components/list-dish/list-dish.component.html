@@ -1,5 +1,11 @@
 <!-- <app-spinner *ngIf="spinner!=true"></app-spinner> -->
 
+<div id="btnAdd" class="container">
+  <a [routerLink]="['/addDish']" routerLinkActive="router-link-active"  class="add">
+    <button type="button" class="btn btn-success " *ngIf="flagAddProduct === false">
+      + Aggiungi Prodotto</button>
+  </a>
+</div>
 
 
 <div class=" container responsive " *ngIf="spinner === true">
