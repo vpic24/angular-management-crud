@@ -16,12 +16,14 @@ export class UpdateDishComponent implements OnInit {
   ) { }
 
   id: number;
+  idFound: boolean = false;
   @Input() productDetails: Product
 
   getProduct(id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
+        this.idFound = true;        
       });
 
   }

@@ -12,6 +12,7 @@ import { ListDishComponent } from './components/list-dish/list-dish.component';
 import { DetailsDishComponent } from './components/details-dish/details-dish.component';
 import { AddDishComponent } from './components/add-dish/add-dish.component';
 import { UpdateDishComponent } from './components/update-dish/update-dish.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UpdateDishComponent } from './components/update-dish/update-dish.compon
     ListDishComponent,
     DetailsDishComponent,
     AddDishComponent,
-    UpdateDishComponent
+    UpdateDishComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

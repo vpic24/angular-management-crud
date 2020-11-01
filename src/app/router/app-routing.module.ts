@@ -5,6 +5,7 @@ import { DetailsDishComponent } from '../components/details-dish/details-dish.co
 import { HomeComponent } from '../components/home/home.component';
 import { ListDishComponent } from '../components/list-dish/list-dish.component';
 import { UpdateDishComponent } from '../components/update-dish/update-dish.component';
+import { ErrorPageComponent } from '../components/error-page/error-page.component';
 
 
 const routes: Routes = [
@@ -22,11 +23,15 @@ const routes: Routes = [
   },
 
   {
-    path: 'home', redirectTo: '', pathMatch: 'full'
+    path: 'home', redirectTo: '/', pathMatch: 'full'
   },
 
   {
     path: '', component: HomeComponent
+  },
+
+  {
+    path:'**', component: ErrorPageComponent
   }
 
 ];
