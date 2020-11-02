@@ -7,13 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gestionale';
-  tag = [
-    { title: 'Piatti Disponibili', url: "" }
-   /*  { title: 'Utenti' , url: ""} */
-  ];
+ /*  tag = [
+    { title: 'Piatti Disponibili' },
+    { title: 'Utenti'},
+  ]; */
 
   tagDish = [
     { title: 'Lista Dei Piatti', url: "/listDish" },
     { title: 'Inserisci Un Piatto', url: "/addDish"},
+  ];
+
+  tagUser = [
+    { title: 'Lista Dei Clienti Prenotati', url: "aaa" },
+    { title: 'Inserisci Una Prenotazione', url: "aa"},
   ];
 }

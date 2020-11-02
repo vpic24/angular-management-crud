@@ -9,11 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() items;
-  @Input() tagDishs;
+  @Input() tagDish;
+  @Input() tagUser;
   
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -13,18 +13,41 @@
 
             <div class="btn-group">
                 
-                <a class="nav-link" *ngFor="let tab of items" href="">
+                <a class="nav-link"  href="">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" 
                 
-                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{tab.title}}</button>
+                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Piatti Disponibili</button>
                     <div class="dropdown-menu" >
-                        <a class="dropdown-item" *ngFor="let dishTab of tagDishs" 
+                        <a class="dropdown-item" *ngFor="let dishTab of tagDish" 
                         routerLink = '/dish/{{dishTab.url}}' routerLinkActive="router-link-active"> {{dishTab.title}} 
                         </a>
+                
+                        
                     </div>
+
+                    
                 </a>
                
               </div>
+              <div class="btn-group">
+                
+                <a class="nav-link"  href="">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" 
+                
+                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clienti Registrati</button>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" *ngFor="let userTab of tagUser" 
+                        routerLink = '/user/{{userTab.url}}' routerLinkActive="router-link-active"> {{userTab.title}} 
+                        </a>
+                
+                        
+                    </div>
+
+                    
+                </a>
+               
+              </div>
+
 
         </ul>
     </div>
