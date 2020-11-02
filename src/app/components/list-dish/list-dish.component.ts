@@ -12,19 +12,13 @@ import { AddDishComponent } from 'src/app/components/add-dish/add-dish.component
 })
 export class ListDishComponent implements OnInit {
 
- //  @ViewChild(AddDishComponent) child: AddDishComponent;
-
   constructor(
     private productService: ProductService,
-    private router: Router
-    ) { }
+  ) { }
 
   products: Product;
   productDetails: Product;
   productAdd: Product;
-  flagGetProduct: boolean = false;
-  flagAddProduct: boolean = false;
-  flagUpdateProduct: boolean = false;
   spinner: boolean = false;
 
   //delete a product  
@@ -48,23 +42,6 @@ export class ListDishComponent implements OnInit {
     }
   }
 
-  //get a product by ID number
-  /* getProduct(id: number) {
-    this.productService
-      .getById(id).subscribe((dataDetails: Product) => {
-        this.productDetails = dataDetails;
-        this.flagGetProduct = true;
-      });
-
-  } */
-
- /*  updateProduct(id: number) {    
-   this.productService
-      .getById(id).subscribe((dataDetails: Product) => {
-        this.productDetails = dataDetails;        
-      });
-  }
- */
   //get all my products
   fetchData() {
     this.productService

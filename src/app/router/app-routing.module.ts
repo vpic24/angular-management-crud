@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: "detailsDish/:id", component: DetailsDishComponent },
       { path: "addDish", component: AddDishComponent },
       { path: "updateDish/:id", component: UpdateDishComponent },
+      { path: '', component: ListDishComponent },
 
     ]
   },
@@ -31,7 +32,7 @@ const routes: Routes = [
   },
 
   {
-    path:'**', component: ErrorPageComponent
+    path: '**', component: ErrorPageComponent
   }
 
 ];

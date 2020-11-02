@@ -1,8 +1,8 @@
 <!-- <app-spinner *ngIf="spinner!=true"></app-spinner> -->
 
 <div id="btnAdd" class="container">
-  <a [routerLink]="['/dish/addDish']" routerLinkActive="router-link-active"  class="add">
-    <button type="button" class="btn btn-success " *ngIf="flagAddProduct === false">
+  <a [routerLink]="['/dish/addDish']" routerLinkActive="router-link-active" class="add">
+    <button type="button" class="btn btn-success ">
       + Aggiungi Prodotto</button>
   </a>
 </div>
@@ -10,8 +10,7 @@
 
 <div class=" container responsive " *ngIf="spinner === true">
 
-  <table id="list" class="table table-hover table-dark table-striped table-bordered "
-    *ngIf="flagGetProduct===false && flagAddProduct === false">
+  <table id="list" class="table table-hover table-dark table-striped table-bordered ">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -55,19 +54,19 @@
         <td> {{product.desc}} </td>
         <td> {{product.price | currency: 'EUR'}} </td>
         <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-        <td [routerLink]="['/dish/updateDish',product.id]" routerLinkActive="router-link-active"><a class="update">UPDATE </a></td>
-        <td [routerLink]="['/dish/detailsDish',product.id]"   routerLinkActive="router-link-active"><a class="info">INFO </a>
+        <td [routerLink]="['/dish/updateDish',product.id]" routerLinkActive="router-link-active"><a
+            class="update">UPDATE </a></td>
+        <td [routerLink]="['/dish/detailsDish',product.id]" routerLinkActive="router-link-active"><a class="info">INFO
+          </a>
         </td>
 
       </tr>
 
     </tbody>
   </table>
-   <tr>
-    
+  <tr>
+
   </tr>
-  <!--<tr>
-    <app-dish-details [productDetails]="productDetails" *ngIf="flagGetProduct === true"></app-dish-details>
-  </tr> -->
+
 
 </div>

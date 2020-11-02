@@ -17,6 +17,7 @@ export class UpdateDishComponent implements OnInit {
 
   id: number;
   idFound: boolean = false;
+  
   @Input() productDetails: Product
 
   getProduct(id: number) {

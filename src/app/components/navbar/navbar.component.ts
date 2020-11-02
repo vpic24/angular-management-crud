@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   @Input() items;
   @Input() tagDishs;
+  
   constructor() { }
 
   ngOnInit(): void {

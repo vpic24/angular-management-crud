@@ -17,7 +17,6 @@ export class AddDishComponent implements OnInit,OnChanges {
     ) { }
 
   @Input() productDetails: Product;
-  // products: Product;
   flagBtn: boolean = false;
 
   productForm = new FormGroup({
