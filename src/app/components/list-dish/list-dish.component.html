@@ -3,7 +3,7 @@
 <div id="btnAdd" class="container">
   <a [routerLink]="['/dish/addDish']" routerLinkActive="router-link-active" class="add">
     <button type="button" class="btn btn-success ">
-      + Aggiungi Prodotto</button>
+      + Aggiungi Piatto</button>
   </a>
 </div>
 
@@ -37,7 +37,7 @@
               clip-rule="evenodd" />
             <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v4a.5.5 0 01-1 0v-4A.5.5 0 018 6z" clip-rule="evenodd" />
           </svg></th>
-        <th scope="col"><svg style="color: greenyellow; font-size:2rem;" width="1em" height="1em" viewBox="0 0 16 16"
+        <th scope="col"><svg style="color: #15a3b8; font-size:2rem;" width="1em" height="1em" viewBox="0 0 16 16"
             class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
             <path
@@ -53,11 +53,15 @@
         <td> {{product.type}} </td>
         <td> {{product.desc}} </td>
         <td> {{product.price | currency: 'EUR'}} </td>
-        <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-        <td [routerLink]="['/dish/updateDish',product.id]" routerLinkActive="router-link-active"><a
-            class="update">UPDATE </a></td>
-        <td [routerLink]="['/dish/detailsDish',product.id]" routerLinkActive="router-link-active"><a class="info">INFO
-          </a>
+
+        <td (click)="deleteProduct(product.id)">
+          <button style="width: 60px;" type="button" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+
+        <td [routerLink]="['/dish/updateDish',product.id]" routerLinkActive="router-link-active">
+          <button type="button" class="btn btn-warning btn-sm">Update</button>
+        <td [routerLink]="['/dish/detailsDish',product.id]" routerLinkActive="router-link-active">
+          <button style="width: 60px;" type="button" class="btn btn-info btn-sm">Info</button>
         </td>
 
       </tr>
