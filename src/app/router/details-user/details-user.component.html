@@ -1,0 +1,18 @@
+<div id="card" class="card">
+    <h5 class="card-header">id: {{userDetails?.id}}</h5>
+    <h5 id="white" class="card-header">{{userDetails?.firstname | uppercase}}</h5>
+  
+    <h5 id="white" class="card-header">{{userDetails?.lastname | uppercase}}</h5>
+    <h5 id="orange" class="card-header">{{userDetails?.birth | date: 'dd-MM-yyyy'}}</h5>
+    <h5 id="white" class="card-header">{{userDetails?.sex | uppercase}}</h5>
+    <h5 id="orange" class="card-header">{{userDetails?.address}}</h5>
+
+  
+    <a>
+    <button id="back" class="btn btn-secondary" type="submit" (click)="backHome()">
+      Indietro
+    </button>
+    </a>
+  
+  </div>
+

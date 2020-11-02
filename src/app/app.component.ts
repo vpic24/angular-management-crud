@@ -18,7 +18,7 @@ export class AppComponent {
   ];
 
   tagUser = [
-    { title: 'Lista Dei Clienti Prenotati', url: "aaa" },
-    { title: 'Inserisci Una Prenotazione', url: "aa"},
+    { title: 'Lista Dei Clienti Prenotati', url: "/listUser" },
+    { title: 'Inserisci Una Prenotazione', url: "/addUser"},
   ];
 }

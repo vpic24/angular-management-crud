@@ -23,6 +23,10 @@ const routes: Routes = [
     ]
   },
 
+  { path: 'user/listUser', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+  { path: 'user/detailsUser/:id', loadChildren: () => import('./details-user/details-user.module').then(m => m.DetailsUserModule) },
+
+
   {
     path: 'home', redirectTo: '/', pathMatch: 'full'
   },
@@ -30,6 +34,7 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
+  
 
   {
     path: '**', component: ErrorPageComponent
