@@ -24,12 +24,12 @@ export class UserService {
     return this.httpClient.delete(`${this.BaseUrl}/${id}`);
   }
 
-  public create(product: User) {
-    return this.httpClient.post(`${this.BaseUrl}`, product);
+  public create(user: User) {
+    return this.httpClient.post(`${this.BaseUrl}`, user);
   }
 
-  public update(product: User, id: number) {
-    return this.httpClient.put(`${this.BaseUrl}/${id}`, product);
+  public update(user: User, id: number) {
+    return this.httpClient.put(`${this.BaseUrl}/${id}`, user);
   }
  
 }

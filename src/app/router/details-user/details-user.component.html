@@ -1,10 +1,15 @@
 <div id="card" class="card">
-    <h5 class="card-header">id: {{userDetails?.id}}</h5>
-    <h5 id="white" class="card-header">{{userDetails?.firstname | uppercase}}</h5>
-  
-    <h5 id="white" class="card-header">{{userDetails?.lastname | uppercase}}</h5>
+    <b> <label >id</label></b>
+    <h5 class="card-header"> {{userDetails?.id}}</h5>
+    <b> <label >Nome</label></b>
+    <h5 id="orange" class="card-header">{{userDetails?.firstname | uppercase}}</h5>
+    <b> <label> Cognome</label></b>
+    <h5 id="orange" class="card-header">{{userDetails?.lastname | uppercase}}</h5>
+    <b> <label > Data di Nascita</label></b>
     <h5 id="orange" class="card-header">{{userDetails?.birth | date: 'dd-MM-yyyy'}}</h5>
-    <h5 id="white" class="card-header">{{userDetails?.sex | uppercase}}</h5>
+    <b> <label > Sesso</label></b>
+    <h5 id="orange" class="card-header">{{userDetails?.sex | uppercase}}</h5>
+    <b> <label > Indirizzo</label></b>
     <h5 id="orange" class="card-header">{{userDetails?.address}}</h5>
 
   
