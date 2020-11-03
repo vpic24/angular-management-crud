@@ -4,6 +4,7 @@
   table {
     margin-top: 55px;
     text-align: center;
+    border-radius: 30px;
   }
   
   .table td, .table th {
@@ -17,3 +18,13 @@
     
   }
   
+  h1 { 
+    color: #486691; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 75px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+    margin-top: 20px;
+  }

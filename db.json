@@ -67,10 +67,10 @@
   "users": [
     {
       "firstname": "Vincenzo",
-      "lastname": "Piccolo",
+      "lastname": "piccolo",
+      "sex": "Maschio",
       "birth": "1900-04-24",
       "address": "via Napoli",
-      "sex": "m",
       "id": 1
     },
     {
@@ -78,7 +78,7 @@
       "lastname": "jobs",
       "birth": "1800-04-12",
       "address": "via apple",
-      "sex": "m",
+      "sex": "Maschio",
       "id": 2
     },
     {
@@ -86,13 +86,13 @@
       "lastname": "gates",
       "birth": "1922-02-22",
       "address": "via microsoft",
-      "sex": "m",
+      "sex": "Maschio",
       "id": 3
     },
     {
       "firstname": "pippo",
       "lastname": "paperino",
-      "sex": "F",
+      "sex": "Maschio",
       "birth": "1999-01-22T00:00:00.000Z",
       "address": "via germania",
       "id": 4

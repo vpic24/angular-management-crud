@@ -8,6 +8,7 @@ import { UpdateDishComponent } from '../components/update-dish/update-dish.compo
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 
 
+
 const routes: Routes = [
   {
     path: 'dish',
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'user/listUser', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: 'user/detailsUser/:id', loadChildren: () => import('./details-user/details-user.module').then(m => m.DetailsUserModule) },
   { path: 'user/addUser', loadChildren: () => import('./add-user/add-user.module').then(m => m.AddUserModule) },
+  { path: 'user/updateUser/:id', loadChildren: () => import('./update-user/update-user.module').then(m => m.UpdateUserModule) },
+
 
 
   {

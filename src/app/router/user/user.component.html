@@ -7,7 +7,7 @@
     </a>
   </div> -->
   
-  
+  <h1>Lista Clienti</h1>
   <div class=" container responsive " *ngIf="spinner === true">
   
     <table id="list" class="table table-hover table-dark table-striped table-bordered ">
@@ -53,7 +53,10 @@
           <td> {{user.firstname | uppercase}} </td>
           <td> {{user.lastname | uppercase}} </td>
           <td> {{user.birth | date: 'dd-MM-yyyy'}} </td>
-          <td> {{user.sex | uppercase}} </td>
+          <td *ngIf="user.sex==='Maschio'">M</td>
+          <td *ngIf="user.sex==='Femmina'">F</td>
+          <td *ngIf="user.sex==='Non definito'">Non Definito</td>
+      
   
           <td (click)="deleteUser(user.id)">
             <button style="width: 60px;" type="button" class="btn btn-danger btn-sm">Delete</button>

@@ -10,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit,OnChanges {
+export class AddUserComponent implements OnInit, OnChanges {
 
   constructor(
     private userService: UserService,
@@ -76,7 +76,7 @@ export class AddUserComponent implements OnInit,OnChanges {
         lastname: user.lastname,
         sex: user.sex,
         address: user.address,
-        birth: user.birth
+        birth: user.birth        
       });
     }
   }

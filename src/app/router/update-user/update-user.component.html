@@ -1,0 +1,10 @@
+<p *ngIf="idFound">
+    <app-add-user [userDetails]="userDetails"> 
+    </app-add-user>
+    </p>
+    
+    
+    <div *ngIf="!idFound">
+        <h1> Utente selezionato non presente </h1>
+    </div>
+    

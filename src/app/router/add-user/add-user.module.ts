@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddUserRoutingModule,
     ReactiveFormsModule,
     FormsModule
+  ],
+  exports:[
+    AddUserComponent
   ]
 })
 export class AddUserModule { }
