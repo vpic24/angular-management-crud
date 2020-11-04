@@ -1,0 +1,73 @@
+<div id="lista" *ngIf="flagBtn === false" class="alert alert-info container" role="alert">
+  <h2 style="text-align: center;">Aggiungi Utente</h2>
+</div>
+
+<div class="alert alert-warning container" *ngIf="flagBtn === true" role="alert">
+  <h2 style="text-align: center;">
+    <span *ngIf="!userDetails">Aggiungi Utente</span>
+    <span *ngIf="userDetails">Modifica Utente</span>
+  </h2>
+</div>
+
+<div class="container p-5">
+
+  <form [formGroup]="userForm">
+    <div class="form-row mt-2">
+      <div class="col-md-6 mb-3 form-group">
+        <label for="validationDefault01">*Nome Utente</label>
+        <input type="text" formControlName="firstname" class="form-control" placeholder="Nome">
+      </div>
+    </div>
+
+    <div class="form-row mt-2">
+      <div class="col-md-4 mb-3 form-group">
+        <label for="validationDefault01">*Cognome Utente</label>
+        <input type="text" formControlName="lastname" class="form-control" placeholder="Cognome">
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <label for="validationDefault04">*Sesso</label>
+        <select class="custom-select" formControlName="sex" id="validationDefault04">
+          <option>Maschio</option>
+          <option>Femmina</option>
+          <option>Altro</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">*Data di nascita</label>
+        <input type="date" formControlName="birth" class="form-control" id="birth" placeholder="gg/mm/aaaa">
+      </div>
+
+      <div class="col-md-9 mb-9">
+        <label for="validationDefault02">*Indirizzo Cliente</label>
+        <input id="desc" type="text" formControlName="address" class="form-control" placeholder="Indirizzo">
+      </div>
+
+    </div>
+
+    <a>
+      <button id="confirm" class="btn btn-primary" type="submit" *ngIf="flagBtn === false" (click)="submitBtn()"
+        [disabled]="!userForm.valid">Salva
+      </button>
+    </a>
+    <a>
+      <button id="condifrm" class="btn btn-warning" type="submit" *ngIf="flagBtn === true"
+        (click)="updateBtn(userDetails)" [disabled]="!userForm.valid">
+        Modifica
+      </button>
+    </a>
+
+    <a>
+      <button id="back" class="btn btn-secondary" type="submit" (click)="backHome()">
+        Indietro
+      </button>
+    </a>
+
+    <a>
+      <button id="back" class="btn btn-danger" type="submit" (click)="resetForm()">
+        Reset
+      </button>
+    </a>
+  </form>
+</div>

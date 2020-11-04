@@ -38,7 +38,7 @@ export class AddUserComponent implements OnInit, OnChanges {
     const firstname = this.userForm.get('firstname').value;
     const lastname = this.userForm.get('lastname').value;
     const sex = this.userForm.get('sex').value;
-    const birth = new Date (this.userForm.get('birth').value);
+    const birth = this.userForm.get('birth').value;
     const address = this.userForm.get('address').value;
 
     if (this.userForm.valid) {

@@ -1,0 +1,48 @@
+<!-- <div id="card" class="card">
+    <b> <label >id</label>
+    <h5 class="card-header"> {{userDetails?.id}}</h5>
+    <b> <label >Nome</label>
+    <h5 id="orange" class="card-header">{{userDetails?.firstname | uppercase}}</h5>
+    <b> <label> Cognome</label>
+    <h5 id="orange" class="card-header">{{userDetails?.lastname | uppercase}}</h5>
+    <b> <label > Data di Nascita</label>
+    <h5 id="orange" class="card-header">{{userDetails?.birth | date: 'dd-MM-yyyy'}}</h5>
+    <b> <label > Sesso</label>
+    <h5 id="orange" class="card-header">{{userDetails?.sex | uppercase}}</h5>
+    <b> <label > Indirizzo</label>
+    <h5 id="orange" class="card-header">{{userDetails?.address}}</h5>
+
+  
+    <a>
+    <button id="back" class="btn btn-secondary" type="submit" (click)="backHome()">
+      Indietro
+    </button>
+    </a>
+  
+  </div> -->
+
+  <h1>Dettagli Cliente ID {{userDetails?.id}}</h1> 
+
+<hr/>
+<div style="text-align: center;"> 
+  <div>
+    <label><h2><b>Nome: </b>{{userDetails?.firstname | uppercase}} </h2></label> 
+  </div>
+  <div>
+    <label><h2><b>Cognome:  </b>{{userDetails?.lastname | uppercase}}</h2></label>
+  </div>
+  <div>
+    <label><h2><b>Sesso: </b>{{userDetails?.sex}}</h2></label>
+  </div>  
+  <div>
+    <label><h2><b>Data di nascita:  </b>{{userDetails?.birth | date: 'dd-MM-yyyy'}}</h2></label>
+  </div>  
+  <div>
+    <label><h2><b>Indirizzo: </b>{{userDetails?.address}}</h2></label>
+  </div>  
+  
+
+<br>
+<br>
+<button (click)="backHome()" class="btn btn-primary">Torna alla lista Clienti</button><br>
+</div>
