@@ -8,11 +8,20 @@
   transform: translate(-50%, -50%)!important;
   position: absolute!important; 
   top: 80%!important; 
-  left: 60%!important;
+  left: 65%!important;
   }
 
   #img{
     border-radius: 10px 10px 10px 10px;
   }
 
-  
+  h1 { 
+    color: #486691; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 75px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+    margin-top: 20px;
+  }
