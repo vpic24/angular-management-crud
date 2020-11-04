@@ -1,15 +1,22 @@
-<div id="card" class="card">
-    <h5 class="card-header">id: {{productDetails?.id}}</h5>
-    <h5 id="name" class="card-header">{{productDetails?.name | uppercase}}</h5>
-  
-    <h5 id="type" class="card-header">{{productDetails?.type}}</h5>
-    <p id="desc" class="card-header">{{productDetails?.desc}}</p>
-    <h5 id="price" class="card-header">{{productDetails?.price | currency: 'EUR'}}</h5>
-  
-    <a>
-    <button id="back" class="btn btn-secondary" type="submit" (click)="backHome()">
-      Indietro
-    </button>
-    </a>
-  
+<h2 style="text-align:center">Descrizione Piatto</h2>
+
+<div class="card">
+
+  <img *ngIf="productDetails.type === 'Antipasto'" src="/assets/img/antipasto.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails.type === 'Primo'" src="/assets/img/primo.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails.type === 'Secondo'" src="/assets/img/secondo.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails.type === 'Dolce'" src="/assets/img/dolce.jpg" alt="John" style="width:100%">
+
+
+  <h1 class="name"> {{productDetails.name | titlecase}} </h1>
+  <p class="title">{{productDetails.type}}</p>
+  <p class="title">{{productDetails.desc}}</p>
+  <p>Prezzo: {{productDetails.price | currency: 'EUR'}}</p>
+  <div style="margin: 24px 0;">
+    <p [routerLink]="['/dish/updateDish', productDetails.id]" routerLinkActive="router-link-active">
+      <button type="button" style="color: black;" class="btn btn-warning">Modifica</button></p>
+
   </div>
+  <p [routerLink]="['/dish/listDish']" routerLinkActive="router-link-active">
+    <button type="button" class="btn btn-primary">Indietro</button></p>
+</div>

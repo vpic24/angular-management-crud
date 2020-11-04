@@ -1,33 +1,38 @@
-#card {
-    width: 350px;
-    height: 290px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    margin: -100px 0 0 -175px;
-    text-align: center;
-    vertical-align: middle;
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   max-width: 300px;
+   margin: auto;
+   text-align: center;
+   font-family: arial;
  }
-
- #desc {
-     border-bottom: 1px solid rgba(0,0,0,.125);
-     background-color: white;
- }
-
- #type {
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    background-color: navajowhite;
-}
-
- #name {
-    background-color: white;
- }
-
- .card-header {
-    background-color: navajowhite;
- }
-
- #back{
-   margin-top: 5px;
-}
  
+ .title {
+   color: grey;
+   font-size: 18px;
+ }
+ 
+ button {
+   border: none;
+   outline: 0;
+   display: inline-block;
+   padding: 8px;
+   color: white;
+   text-align: center;
+   cursor: pointer;
+   width: 100%;
+   font-size: 18px;
+ }
+ 
+
+ 
+ 
+
+ h1,h2{
+    margin-top: 40px;
+    font-family: Gill Sans, sans-serif;
+ }
+
+ .name{
+    margin: 10px!important;
+ }
+
