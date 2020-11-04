@@ -8,10 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from './service/product.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ListDishComponent } from './components/list-dish/list-dish.component';
-import { DetailsDishComponent } from './components/details-dish/details-dish.component';
-import { AddDishComponent } from './components/add-dish/add-dish.component';
-import { UpdateDishComponent } from './components/update-dish/update-dish.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
@@ -19,10 +15,6 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ListDishComponent,
-    DetailsDishComponent,
-    AddDishComponent,
-    UpdateDishComponent,
     ErrorPageComponent
   ],
   imports: [
