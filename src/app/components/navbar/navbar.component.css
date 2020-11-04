@@ -1,16 +1,25 @@
 .btn-secondary{
     background-color: #037bfe;
     border-color: #037bfe;
+    font-family: Gill Sans, sans-serif;
+    font-size: 16px;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
     color: black;
     background-color: #ffc106;
     border-color: #ffc106;
+    font-family: Gill Sans, sans-serif;
+    font-size: 16px;
 }
 
 .dropdown-item:hover {
     background-color: #486691;
     color: white;
-    
+    font-family: Gill Sans, sans-serif;
+    font-size: 18px;
+}
+.dropdown-item{
+    font-family: Gill Sans, sans-serif;
+    font-size: 18px;
 }
