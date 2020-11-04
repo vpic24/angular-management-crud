@@ -25,7 +25,7 @@ export class AddUserComponent implements OnInit, OnChanges {
     lastname: new FormControl('', Validators.required),
     sex: new FormControl('', Validators.required),
     birth: new FormControl('', [Validators.required]),
-    address: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.email, Validators.required]),
   });
 
  ngOnChanges(changes: SimpleChanges): void {    
@@ -39,10 +39,10 @@ export class AddUserComponent implements OnInit, OnChanges {
     const lastname = this.userForm.get('lastname').value;
     const sex = this.userForm.get('sex').value;
     const birth = this.userForm.get('birth').value;
-    const address = this.userForm.get('address').value;
+    const email = this.userForm.get('email').value;
 
     if (this.userForm.valid) {
-      this.create({firstname, lastname, sex, birth, address});
+      this.create({firstname, lastname, sex, birth, email});
     }
     else {
       alert("Qualcosa è andato storto!!!");
@@ -75,7 +75,7 @@ export class AddUserComponent implements OnInit, OnChanges {
         firstname: user.firstname,
         lastname: user.lastname,
         sex: user.sex,
-        address: user.address,
+        email: user.email,
         birth: user.birth        
       });
     }

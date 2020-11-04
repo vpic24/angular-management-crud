@@ -70,39 +70,39 @@
       "lastname": "piccolo",
       "sex": "Maschio",
       "birth": "1900-04-24",
-      "address": "via Napoli",
+      "email": "vincenzo@piccolo.it",
       "id": 1
     },
     {
       "firstname": "steve",
       "lastname": "jobs",
-      "birth": "1800-04-12",
-      "address": "via apple",
       "sex": "Maschio",
+      "birth": "1800-04-12",
+      "email": "steve@apple.it",
       "id": 2
     },
     {
       "firstname": "bill",
       "lastname": "gates",
-      "birth": "1922-02-22",
-      "address": "via microsoft",
       "sex": "Maschio",
+      "birth": "1922-02-22",
+      "email": "bill@microsoft.it",
       "id": 3
     },
     {
-      "firstname": "pippo",
-      "lastname": "paperino",
-      "sex": "Maschio",
-      "birth": "2020-10-28",
-      "address": "via paperopoli",
+      "firstname": "maria",
+      "lastname": "iorio",
+      "sex": "Femmina",
+      "birth": "1111-11-11",
+      "email": "a@l.it",
       "id": 4
     },
     {
-      "firstname": "q",
+      "firstname": "aa",
       "lastname": "aa",
       "sex": "Altro",
       "birth": "1111-11-11",
-      "address": "111",
+      "email": "a@l.it",
       "id": 5
     }
   ]

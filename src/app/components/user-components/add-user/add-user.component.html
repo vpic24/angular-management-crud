@@ -1,11 +1,11 @@
 <div id="lista" *ngIf="flagBtn === false" class="alert alert-info container" role="alert">
-  <h2 style="text-align: center;">Aggiungi Utente</h2>
+  <h2 style="text-align: center;">Aggiungi Cliente</h2>
 </div>
 
 <div class="alert alert-warning container" *ngIf="flagBtn === true" role="alert">
   <h2 style="text-align: center;">
-    <span *ngIf="!userDetails">Aggiungi Utente</span>
-    <span *ngIf="userDetails">Modifica Utente</span>
+    <span *ngIf="!userDetails">Aggiungi Cliente</span>
+    <span *ngIf="userDetails">Modifica Cliente</span>
   </h2>
 </div>
 
@@ -14,14 +14,14 @@
   <form [formGroup]="userForm">
     <div class="form-row mt-2">
       <div class="col-md-6 mb-3 form-group">
-        <label for="validationDefault01">*Nome Utente</label>
+        <label for="validationDefault01">*Nome</label>
         <input type="text" formControlName="firstname" class="form-control" placeholder="Nome">
       </div>
     </div>
 
     <div class="form-row mt-2">
       <div class="col-md-4 mb-3 form-group">
-        <label for="validationDefault01">*Cognome Utente</label>
+        <label for="validationDefault01">*Cognome</label>
         <input type="text" formControlName="lastname" class="form-control" placeholder="Cognome">
       </div>
 
@@ -40,8 +40,8 @@
       </div>
 
       <div class="col-md-9 mb-9">
-        <label for="validationDefault02">*Indirizzo Cliente</label>
-        <input id="desc" type="text" formControlName="address" class="form-control" placeholder="Indirizzo">
+        <label for="validationDefault02">*Email</label>
+        <input id="desc" type="email" formControlName="email" class="form-control" placeholder="email@domain.it">
       </div>
 
     </div>

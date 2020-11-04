@@ -1,60 +1,38 @@
-#card {
-    width: 350px;
-    height: 490px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    margin: -180px 0 0 -175px;
-    text-align: center;
-    vertical-align: middle;
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   max-width: 300px;
+   margin: auto;
+   text-align: center;
+   font-family: arial;
  }
-
- #orange {
-     border-bottom: 1px solid rgba(0,0,0,.125);
-     background-color: white;
- }
-
- #orange {
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    background-color: #486691;
-    color: white;
-}
-
- #white {
-    background-color: white;
- }
- #white {
-   background-color: white;
-}
-
- .card-header {
-    background-color:  #486691;
-    color: white;
- }
-
- #back{
-   margin-top: 5px;
-}
-
-label{
-   margin-bottom: 0;
-   margin-top: .7rem;
-font-size: 15px;}
  
-h1 { 
-   color: #486691; 
-   font-family: 'Helvetica Neue', sans-serif; 
-   font-size: 75px; 
-   font-weight: bold; 
-   letter-spacing: -1px; 
-   line-height: 1; 
-   text-align: center; 
-   margin-top: 20px;
+ .title {
+   color: grey;
+   font-size: 18px;
+ }
+ 
+ button {
+   border: none;
+   outline: 0;
+   display: inline-block;
+   padding: 8px;
+   color: white;
+   text-align: center;
+   cursor: pointer;
+   width: 100%;
+   font-size: 18px;
+ }
+ 
+
+ 
+ 
+
+ h1,h2{
+    margin-top: 40px;
+    font-family: Gill Sans, sans-serif;
  }
 
- h2 { color: #111; 
-   font-family: 'Open Sans', sans-serif; 
-   font-size: 30px; 
-   line-height: 32px; 
-   
-   text-align: center; }
+ .name{
+    margin: 10px!important;
+ }
+

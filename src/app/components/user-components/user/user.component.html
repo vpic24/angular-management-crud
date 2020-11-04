@@ -16,7 +16,6 @@
           <th scope="col">ID</th>
           <th scope="col">Nome</th>
           <th scope="col">Cognome</th>
-          <th scope="col">Data di nascita</th>
           <th scope="col">Sesso</th>
 
           <th scope="col"><svg style="color: red; font-size: 2rem;" class="bi bi-x-circle" width="1em" height="1em"
@@ -52,7 +51,6 @@
           <td> {{user.id}} </td>
           <td> {{user.firstname | uppercase}} </td>
           <td> {{user.lastname | uppercase}} </td>
-          <td> {{user.birth | date: 'dd-MM-yyyy'}} </td>
           <td *ngIf="user.sex==='Maschio'">M</td>
           <td *ngIf="user.sex==='Femmina'">F</td>
           <td *ngIf="user.sex==='Altro'">Altro</td>
