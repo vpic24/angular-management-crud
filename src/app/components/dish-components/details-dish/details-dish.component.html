@@ -2,19 +2,19 @@
 
 <div class="card">
 
-  <img *ngIf="productDetails.type === 'Antipasto'" src="/assets/img/antipasto.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails.type === 'Primo'" src="/assets/img/primo.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails.type === 'Secondo'" src="/assets/img/secondo.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails.type === 'Dolce'" src="/assets/img/dolce.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails?.type === 'Antipasto'" src="/assets/img/antipasto.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails?.type === 'Primo'" src="/assets/img/primo.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails?.type === 'Secondo'" src="/assets/img/secondo.jpg" alt="John" style="width:100%">
+  <img *ngIf="productDetails?.type === 'Dolce'" src="/assets/img/dolce.jpg" alt="John" style="width:100%">
 
 
-  <h1 class="name"> {{productDetails.name | titlecase}} </h1>
-  <p class="title">{{productDetails.type}}</p>
-  <p class="title">{{productDetails.desc}}</p>
-  <p>Prezzo: {{productDetails.price | currency: 'EUR'}}</p>
+  <h1 class="name"> {{productDetails?.name | titlecase}} </h1>
+  <p class="title">{{productDetails?.type}}</p>
+  <p class="title">{{productDetails?.desc}}</p>
+  <p>Prezzo: {{productDetails?.price | currency: 'EUR'}}</p>
   <div style="margin: 24px 0;">
-    <p [routerLink]="['/dish/updateDish', productDetails.id]" routerLinkActive="router-link-active">
-      <button type="button" style="color: black;" class="btn btn-warning">Modifica</button></p>
+
+    <button type="button" style="color: black;" class="btn btn-warning" (click)="updateDish()">Modifica</button>
 
   </div>
   <p [routerLink]="['/dish/listDish']" routerLinkActive="router-link-active">

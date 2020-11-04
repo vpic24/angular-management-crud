@@ -29,7 +29,10 @@ export class DetailsDishComponent implements OnInit {
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
       });
+  }
 
+  updateDish(){
+    this.router.navigate([`/dish/updateDish/${this.id}`])
   }
 
   ngOnInit(): void {

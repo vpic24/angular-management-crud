@@ -23,6 +23,10 @@ export class DetailsUserComponent implements OnInit {
     this.router.navigate(["/user/listUser"]);
   }
 
+  updateUser(){
+    this.router.navigate([`/user/updateUser/${this.id}`])
+  }
+
   getUser(id: number) {
     this.userService
       .getById(id).subscribe((dataDetails: User) => {

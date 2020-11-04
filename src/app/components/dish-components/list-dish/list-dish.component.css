@@ -11,6 +11,10 @@
     padding: .75rem;
     vertical-align: inherit;
   }
+
+  .table-bordered td, .table-bordered th {
+    border: 0px solid #dee2e6;
+}
   
   #btnAdd {
       margin-top: 55px;

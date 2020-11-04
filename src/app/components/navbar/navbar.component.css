@@ -1,6 +1,6 @@
 .btn-secondary{
-    background-color: #486691;
-    border-color: #486691;
+    background-color: #037bfe;
+    border-color: #037bfe;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {

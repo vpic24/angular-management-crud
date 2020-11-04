@@ -2,17 +2,17 @@
 
 <div class="card">
 
-  <img *ngIf="userDetails.sex === 'Maschio'" src="/assets/img/male.jpg" alt="John" style="width:100%">
-  <img *ngIf="userDetails.sex === 'Femmina'" src="/assets/img/female.jpg" alt="John" style="width:100%">
-  <img *ngIf="userDetails.sex === 'Altro'" src="/assets/img/altro.png" alt="John" style="width:100%">
+  <img *ngIf="userDetails?.sex === 'Maschio'" src="/assets/img/male.jpg" alt="John" style="width:100%">
+  <img *ngIf="userDetails?.sex === 'Femmina'" src="/assets/img/female.jpg" alt="John" style="width:100%">
+  <img *ngIf="userDetails?.sex === 'Altro'" src="/assets/img/altro.png" alt="John" style="width:100%">
 
-  <h1 class="name"> {{userDetails.firstname + ' ' + userDetails.lastname | titlecase}}  </h1>
-  <p class="title">{{userDetails.sex}}</p>
-  <p class="title">Nato il: {{userDetails.birth | date: 'dd-MM-yyyy'}}</p>
-  <p>email: {{userDetails.email}}</p>
+  <h1 class="name"> {{userDetails?.firstname + ' ' + userDetails?.lastname | titlecase}}  </h1>
+  <p class="title">{{userDetails?.sex}}</p>
+  <p class="title">Nato il: {{userDetails?.birth | date: 'dd-MM-yyyy'}}</p>
+  <p>email: {{userDetails?.email}}</p>
   <div style="margin: 24px 0;">
-   <p [routerLink]="['/user/updateUser', userDetails.id]" routerLinkActive="router-link-active"> 
-   <button type="button" style="color: black;" class="btn btn-warning">Modifica</button></p>
+
+    <button type="button" style="color: black;" class="btn btn-warning" (click)="updateUser()">Modifica</button>
 
   </div>
   <p [routerLink]="['/user/listUser']" routerLinkActive="router-link-active" >

@@ -19,6 +19,7 @@ export class AddUserComponent implements OnInit, OnChanges {
 
   @Input() userDetails: User;
   flagBtn: boolean = false;
+  today = new Date();
 
   userForm = new FormGroup({
     firstname: new FormControl('', [Validators.required, Validators.maxLength(30)]),
@@ -40,7 +41,7 @@ export class AddUserComponent implements OnInit, OnChanges {
     const sex = this.userForm.get('sex').value;
     const birth = this.userForm.get('birth').value;
     const email = this.userForm.get('email').value;
-
+    
     if (this.userForm.valid) {
       this.create({firstname, lastname, sex, birth, email});
     }
@@ -68,6 +69,7 @@ export class AddUserComponent implements OnInit, OnChanges {
 
   update(user: User) {
 
+    
     this.flagBtn = true;
 
     if (user) {
@@ -76,7 +78,7 @@ export class AddUserComponent implements OnInit, OnChanges {
         lastname: user.lastname,
         sex: user.sex,
         email: user.email,
-        birth: user.birth        
+        birth: user.birth,       
       });
     }
   }
@@ -111,7 +113,7 @@ export class AddUserComponent implements OnInit, OnChanges {
     this.router.navigate(["/user/listUser"]);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }
