@@ -19,7 +19,6 @@ export class AddUserComponent implements OnInit, OnChanges {
 
   @Input() userDetails: User;
   flagBtn: boolean = false;
-  today = new Date();
 
   userForm = new FormGroup({
     firstname: new FormControl('', [Validators.required, Validators.maxLength(30)]),
