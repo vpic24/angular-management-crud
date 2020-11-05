@@ -9,7 +9,7 @@ input.ng-valid,textarea.ng-valid, select.ng-valid  {
 }
 
 input.ng-pristine,textarea.ng-pristine, select.ng-pristine  {
-    border: 2px solid grey;
+    border: 1px solid grey;
     border-color: grey;
 }
 
@@ -24,7 +24,7 @@ button{
       align-items: center;
 }
 
-label,input,select{
+label,input,select,textarea{
     font-family: Gill Sans, sans-serif;
     font-size: 20px;
 }

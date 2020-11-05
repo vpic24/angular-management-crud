@@ -34,7 +34,7 @@ const routes: Routes = [
   },
 
   { path: 'home', redirectTo: '', pathMatch: 'full' },
-  { path: '', loadChildren: () => import('../components/home-page-components/home-page/home-page.module').then(m => m.HomePageModule) },
+  { path: '', loadChildren: () => import('../components/home-page/home-page.module').then(m => m.HomePageModule) },
   { path: '**', loadChildren: () => import('../components/error-page-components/error-page/error-page.module').then(m => m.ErrorPageModule) },
 ];
 
