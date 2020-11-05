@@ -94,7 +94,7 @@ export class AddDishComponent implements OnInit, OnChanges {
 
   //update a product
   updateBtn(product: Product) {
-    if(Swal.fire({
+    if (Swal.fire({
       title: `Stai per aggiornare il piatto con id: ${product.id}.`,
       text: "SEI SICURO",
       icon: 'warning',
@@ -106,31 +106,31 @@ export class AddDishComponent implements OnInit, OnChanges {
     }).then((result) => {
       if (result.isConfirmed) {
         this.productService
-        .update(this.productForm.value, product.id).subscribe(
-          val => {
-            Swal.fire(
-              'Prodotto Aggiornato correttamente!',
-              'Il piatto è stato modificato',
-              'success'
-            )
-          },
+          .update(this.productForm.value, product.id).subscribe(
+            val => {
+              Swal.fire(
+                'Prodotto Aggiornato correttamente!',
+                'Il piatto è stato modificato',
+                'success'
+              )
+            },
 
-          error => {
-            Swal.fire({
-              icon: 'error',
-              title: 'OPS...',
-              text: "Si è verificato un errore durante l'aggiornamento",
-            })
-          },
+            error => {
+              Swal.fire({
+                icon: 'error',
+                title: 'OPS...',
+                text: "Si è verificato un errore durante l'aggiornamento",
+              })
+            },
 
-          () => {
-            console.log('Aggiornamento completato');
-            this.router.navigate(["/dish/listDish"]);
-          }
-        );
-       
+            () => {
+              console.log('Aggiornamento completato');
+              this.router.navigate(["/dish/listDish"]);
+            }
+          );
+
       }
-    })){}
+    })) { }
 
   }
 

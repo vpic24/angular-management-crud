@@ -23,7 +23,7 @@ export class ListDishComponent implements OnInit {
   //delete a product  
   deleteProduct(id: number) {
 
-    if(Swal.fire({
+    if (Swal.fire({
       title: `Stai per eliminare il piatto con id: ${id}.`,
       text: "SEI SICURO",
       icon: 'warning',
@@ -35,31 +35,31 @@ export class ListDishComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.productService
-        .delete(id).subscribe(
-          val => {
-            Swal.fire(
-              'Prodotto eliminato correttamente!',
-              'Il piatto è stato eliminato',
-              'success'
-            )
-          },
+          .delete(id).subscribe(
+            val => {
+              Swal.fire(
+                'Prodotto eliminato correttamente!',
+                'Il piatto è stato eliminato',
+                'success'
+              )
+            },
 
-          error => {
-            Swal.fire({
-              icon: 'error',
-              title: 'OPS...',
-              text: 'Si è verificato un errore durante la scrittura',
-            })
-          },
+            error => {
+              Swal.fire({
+                icon: 'error',
+                title: 'OPS...',
+                text: 'Si è verificato un errore durante la scrittura',
+              })
+            },
 
-          () => {
-            console.log('Cancellazione completata');
-            this.fetchData();
-          }
-        );
-       
+            () => {
+              console.log('Cancellazione completata');
+              this.fetchData();
+            }
+          );
+
       }
-    })){}
+    })) { }
   }
 
   //get all my products

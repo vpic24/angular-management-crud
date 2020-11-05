@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   deleteUser(id: number) {
 
 
-    if(Swal.fire({
+    if (Swal.fire({
       title: `Stai per cancellare il cliente con id: ${id}.`,
       text: "SEI SICURO",
       icon: 'warning',
@@ -32,31 +32,31 @@ export class UserComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.userservice
-        .delete(id).subscribe(
-          val => {
-            Swal.fire(
-              'Cliente eliminato correttamente!',
-              'Il cliente è stato eliminato',
-              'success'
-            )
-          },
+          .delete(id).subscribe(
+            val => {
+              Swal.fire(
+                'Cliente eliminato correttamente!',
+                'Il cliente è stato eliminato',
+                'success'
+              )
+            },
 
-          error => {
-            Swal.fire({
-              icon: 'error',
-              title: 'OPS...',
-              text: 'Si è verificato un errore durante la scrittura',
-            })
-          },
+            error => {
+              Swal.fire({
+                icon: 'error',
+                title: 'OPS...',
+                text: 'Si è verificato un errore durante la scrittura',
+              })
+            },
 
-          () => {
-            console.log('Cancellazione completata');
-            this.fetchData();
-          }
-        );
-       
+            () => {
+              console.log('Cancellazione completata');
+              this.fetchData();
+            }
+          );
+
       }
-    })){}
+    })) { }
   }
 
   //get all my products
