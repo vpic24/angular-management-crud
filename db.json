@@ -114,11 +114,11 @@
       "id": 6
     },
     {
-      "firstname": "maria grazia",
-      "lastname": "cucinotta",
+      "firstname": "nicole",
+      "lastname": "kidman",
       "sex": "Femmina",
-      "birth": "1965-01-01",
-      "email": "maria@grazia.it",
+      "birth": "1967-06-20",
+      "email": "nik@kidman.com",
       "id": 7
     },
     {
@@ -133,9 +133,17 @@
       "firstname": "belen",
       "lastname": "rodriguez",
       "sex": "Femmina",
-      "birth": "1990-04-12",
+      "birth": "1984-09-20",
       "email": "belen@rodriguez.it",
       "id": 9
+    },
+    {
+      "firstname": "Federica",
+      "lastname": "Pellegrini",
+      "sex": "Femmina",
+      "birth": "1988-08-05",
+      "email": "fede@pellegrini.it",
+      "id": 10
     }
   ]
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
-import { ErrorPageComponent } from '../components/error-page/error-page.component';
 
 
 
@@ -37,8 +36,7 @@ const routes: Routes = [
 
   { path: 'home', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomeComponent },
-  { path: '**', component: ErrorPageComponent }
-
+  { path: '**', loadChildren: () => import('../components/error-page-components/error-page/error-page.module').then(m => m.ErrorPageModule) },
 ];
 
 @NgModule({

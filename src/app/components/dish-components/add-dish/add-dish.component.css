@@ -36,3 +36,8 @@ label,input,select{
 #desc{
     margin-bottom: 10px;
 }
+
+h2{
+    font-family: Gill Sans, sans-serif;
+    font-size: 50px;
+}

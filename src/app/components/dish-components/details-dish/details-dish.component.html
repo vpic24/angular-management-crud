@@ -1,3 +1,4 @@
+<div *ngIf="idFound">
 <h2 style="text-align:center">Descrizione Piatto</h2>
 
 <div class="card">
@@ -19,4 +20,9 @@
   </div>
   <p [routerLink]="['/dish/listDish']" routerLinkActive="router-link-active">
     <button type="button" class="btn btn-primary">Indietro</button></p>
+</div>
+</div>
+
+<div *ngIf="!idFound">
+  <h1 class="notFound"> Prodotto selezionato non presente </h1>
 </div>

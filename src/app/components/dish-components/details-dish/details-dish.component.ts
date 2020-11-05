@@ -19,6 +19,7 @@ export class DetailsDishComponent implements OnInit {
 
   @Input() productDetails: Product;
   id: number;
+  idFound: boolean = false;
 
   backHome() {
     this.router.navigate(["/dish/listDish"]);
@@ -28,6 +29,7 @@ export class DetailsDishComponent implements OnInit {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
+        this.idFound = true;
       });
   }
 

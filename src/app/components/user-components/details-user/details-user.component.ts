@@ -18,6 +18,7 @@ export class DetailsUserComponent implements OnInit {
 
   @Input() userDetails: User;
   id: number;
+  idFound: boolean = false;
 
   backHome() {
     this.router.navigate(["/user/listUser"]);
@@ -31,6 +32,7 @@ export class DetailsUserComponent implements OnInit {
     this.userService
       .getById(id).subscribe((dataDetails: User) => {
         this.userDetails = dataDetails;
+        this.idFound = true;
       });
 
   }

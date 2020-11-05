@@ -8,14 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from './service/product.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    ErrorPageComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
