@@ -15,7 +15,7 @@ export class AddUserComponent implements OnInit, OnChanges {
   constructor(
     private userService: UserService,
     private router: Router,
-    ) { }
+  ) { }
 
   @Input() userDetails: User;
   flagBtn: boolean = false;
@@ -29,11 +29,11 @@ export class AddUserComponent implements OnInit, OnChanges {
     email: new FormControl('', [Validators.email, Validators.required]),
   });
 
- ngOnChanges(changes: SimpleChanges): void {    
+  ngOnChanges(changes: SimpleChanges): void {
     this.update(changes.userDetails.currentValue);
-    
+
   }
- 
+
 
   submitBtn() {
     const firstname = this.userForm.get('firstname').value;
@@ -41,16 +41,16 @@ export class AddUserComponent implements OnInit, OnChanges {
     const sex = this.userForm.get('sex').value;
     const birth = this.userForm.get('birth').value;
     const email = this.userForm.get('email').value;
-    
+
     if (this.userForm.valid) {
-      this.create({firstname, lastname, sex, birth, email});
+      this.create({ firstname, lastname, sex, birth, email });
     }
     else {
       alert("Qualcosa è andato storto!!!");
     }
   }
 
-    //create e new user
+  //create e new user
   create(user: User) {
     this.userService.create(user).subscribe(
 
@@ -69,7 +69,7 @@ export class AddUserComponent implements OnInit, OnChanges {
 
   update(user: User) {
 
-    
+
     this.flagBtn = true;
 
     if (user) {
@@ -78,7 +78,7 @@ export class AddUserComponent implements OnInit, OnChanges {
         lastname: user.lastname,
         sex: user.sex,
         email: user.email,
-        birth: user.birth,       
+        birth: user.birth,
       });
     }
   }
@@ -113,7 +113,7 @@ export class AddUserComponent implements OnInit, OnChanges {
     this.router.navigate(["/user/listUser"]);
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
 
 }

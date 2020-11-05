@@ -24,7 +24,7 @@ export class DetailsUserComponent implements OnInit {
     this.router.navigate(["/user/listUser"]);
   }
 
-  updateUser(){
+  updateUser() {
     this.router.navigate([`/user/updateUser/${this.id}`])
   }
 
@@ -37,7 +37,7 @@ export class DetailsUserComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = +params["id"];
     });

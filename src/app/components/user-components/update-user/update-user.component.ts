@@ -11,20 +11,20 @@ import { UserService } from 'src/app/service/user.service';
 export class UpdateUserComponent implements OnInit {
 
   constructor(
-    private userService : UserService,
+    private userService: UserService,
     private route: ActivatedRoute
   ) { }
 
   id: number;
   idFound: boolean = false;
-  
- @Input()  userDetails: User;
+
+  @Input() userDetails: User;
 
   getUser(id: number) {
     this.userService
       .getById(id).subscribe((dataDetails: User) => {
         this.userDetails = dataDetails;
-        this.idFound = true;                
+        this.idFound = true;
       });
 
   }

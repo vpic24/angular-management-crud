@@ -1,12 +1,10 @@
 //user interface
 
-import { Data } from '@angular/router';
-
 export interface User {
     id?: number;
     firstname: string;
     lastname: string;
-    birth: Data;
+    birth: string;
     email: string;
     sex: string;
 }

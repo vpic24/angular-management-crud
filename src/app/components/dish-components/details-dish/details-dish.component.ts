@@ -33,7 +33,7 @@ export class DetailsDishComponent implements OnInit {
       });
   }
 
-  updateDish(){
+  updateDish() {
     this.router.navigate([`/dish/updateDish/${this.id}`])
   }
 

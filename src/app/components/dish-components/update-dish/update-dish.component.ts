@@ -11,20 +11,20 @@ import { ProductService } from 'src/app/service/product.service';
 export class UpdateDishComponent implements OnInit {
 
   constructor(
-    private productService : ProductService,
+    private productService: ProductService,
     private route: ActivatedRoute
   ) { }
 
   id: number;
   idFound: boolean = false;
-  
+
   @Input() productDetails: Product
 
   getProduct(id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
-        this.idFound = true;        
+        this.idFound = true;
       });
 
   }

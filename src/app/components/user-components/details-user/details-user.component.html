@@ -1,26 +1,26 @@
 <div *ngIf="idFound">
-<h2 style="text-align:center">Profilo Utente</h2>
+  <h2 style="text-align:center">Profilo Utente</h2>
 
-<div class="card">
+  <div class="card">
 
-  <img *ngIf="userDetails?.sex === 'Maschio'" src="/assets/img/male.jpg" alt="John" style="width:100%">
-  <img *ngIf="userDetails?.sex === 'Femmina'" src="/assets/img/female.jpg" alt="John" style="width:100%">
-  <img *ngIf="userDetails?.sex === 'Altro'" src="/assets/img/altro.png" alt="John" style="width:100%">
+    <img *ngIf="userDetails?.sex === 'Maschio'" src="/assets/img/male.jpg" alt="John" style="width:100%">
+    <img *ngIf="userDetails?.sex === 'Femmina'" src="/assets/img/female.jpg" alt="John" style="width:100%">
+    <img *ngIf="userDetails?.sex === 'Altro'" src="/assets/img/altro.png" alt="John" style="width:100%">
 
-  <h1 class="name"> {{userDetails?.firstname + ' ' + userDetails?.lastname | titlecase}}  </h1>
-  <p class="title">{{userDetails?.sex}}</p>
-  <p class="title">Nato il: {{userDetails?.birth | date: 'dd-MM-yyyy'}}</p>
-  <p>email: {{userDetails?.email}}</p>
-  <div style="margin: 24px 0;">
+    <h1 class="name"> {{userDetails?.firstname + ' ' + userDetails?.lastname | titlecase}} </h1>
+    <p class="title">{{userDetails?.sex}}</p>
+    <p class="title">Nato il: {{userDetails?.birth | date: 'dd-MM-yyyy'}}</p>
+    <p>email: {{userDetails?.email}}</p>
+    <div style="margin: 24px 0;">
 
-    <button type="button" style="color: black;" class="btn btn-warning" (click)="updateUser()">Modifica</button>
+      <button type="button" style="color: black;" class="btn btn-warning" (click)="updateUser()">Modifica</button>
 
+    </div>
+    <p [routerLink]="['/user/listUser']" routerLinkActive="router-link-active">
+      <button type="button" class="btn btn-primary">Indietro</button></p>
   </div>
-  <p [routerLink]="['/user/listUser']" routerLinkActive="router-link-active" >
-    <button type="button" class="btn btn-primary">Indietro</button></p>
-</div>
 </div>
 
 <div *ngIf="!idFound">
-    <h1 class="notFound"> Utente selezionato non presente </h1>
+  <h1 class="notFound"> Utente selezionato non presente </h1>
 </div>

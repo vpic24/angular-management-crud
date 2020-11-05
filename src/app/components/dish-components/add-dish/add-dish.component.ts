@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/service/product.service';
@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
   templateUrl: './add-dish.component.html',
   styleUrls: ['./add-dish.component.css']
 })
-export class AddDishComponent implements OnInit,OnChanges {
+export class AddDishComponent implements OnInit, OnChanges {
 
   constructor(
     private productService: ProductService,
     private router: Router,
-    ) { }
+  ) { }
 
   @Input() productDetails: Product;
   flagBtn: boolean = false;
@@ -26,11 +26,11 @@ export class AddDishComponent implements OnInit,OnChanges {
     price: new FormControl('', [Validators.required, Validators.pattern('[0.0-9.9]+')]),
   });
 
- ngOnChanges(changes: SimpleChanges): void {    
+  ngOnChanges(changes: SimpleChanges): void {
     this.update(changes.productDetails.currentValue);
-    
+
   }
- 
+
 
   submitBtn() {
     const name = this.productForm.get('name').value;
@@ -39,14 +39,14 @@ export class AddDishComponent implements OnInit,OnChanges {
     const price = this.productForm.get('price').value;
 
     if (this.productForm.valid) {
-      this.create({name, desc, type, price});
+      this.create({ name, desc, type, price });
     }
     else {
       alert("Qualcosa è andato storto!!!");
     }
   }
 
-    //create e new product
+  //create e new product
   create(product: Product) {
     this.productService.create(product).subscribe(
 

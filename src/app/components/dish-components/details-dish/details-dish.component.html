@@ -1,26 +1,26 @@
 <div *ngIf="idFound">
-<h2 style="text-align:center">Descrizione Piatto</h2>
+  <h2 style="text-align:center">Descrizione Piatto</h2>
 
-<div class="card">
+  <div class="card">
 
-  <img *ngIf="productDetails?.type === 'Antipasto'" src="/assets/img/antipasto.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails?.type === 'Primo'" src="/assets/img/primo.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails?.type === 'Secondo'" src="/assets/img/secondo.jpg" alt="John" style="width:100%">
-  <img *ngIf="productDetails?.type === 'Dolce'" src="/assets/img/dolce.jpg" alt="John" style="width:100%">
+    <img *ngIf="productDetails?.type === 'Antipasto'" src="/assets/img/antipasto.jpg" alt="John" style="width:100%">
+    <img *ngIf="productDetails?.type === 'Primo'" src="/assets/img/primo.jpg" alt="John" style="width:100%">
+    <img *ngIf="productDetails?.type === 'Secondo'" src="/assets/img/secondo.jpg" alt="John" style="width:100%">
+    <img *ngIf="productDetails?.type === 'Dolce'" src="/assets/img/dolce.jpg" alt="John" style="width:100%">
 
 
-  <h1 class="name"> {{productDetails?.name | titlecase}} </h1>
-  <p class="title">{{productDetails?.type}}</p>
-  <p class="title">{{productDetails?.desc}}</p>
-  <p>Prezzo: {{productDetails?.price | currency: 'EUR'}}</p>
-  <div style="margin: 24px 0;">
+    <h1 class="name"> {{productDetails?.name | titlecase}} </h1>
+    <p class="title">{{productDetails?.type}}</p>
+    <p class="title">{{productDetails?.desc}}</p>
+    <p>Prezzo: {{productDetails?.price | currency: 'EUR'}}</p>
+    <div style="margin: 24px 0;">
 
-    <button type="button" style="color: black;" class="btn btn-warning" (click)="updateDish()">Modifica</button>
+      <button type="button" style="color: black;" class="btn btn-warning" (click)="updateDish()">Modifica</button>
 
+    </div>
+    <p [routerLink]="['/dish/listDish']" routerLinkActive="router-link-active">
+      <button type="button" class="btn btn-primary">Indietro</button></p>
   </div>
-  <p [routerLink]="['/dish/listDish']" routerLinkActive="router-link-active">
-    <button type="button" class="btn btn-primary">Indietro</button></p>
-</div>
 </div>
 
 <div *ngIf="!idFound">

@@ -4,7 +4,7 @@
       "name": "cotoletta",
       "desc": "Da Nord a Sud è un piatto che soddisfa tutti, ma viene ordinata specialmente a Milano e dintorni",
       "type": "Secondo",
-      "price": "12.55",
+      "price": "12.59",
       "id": 1
     },
     {
@@ -70,7 +70,7 @@
       "lastname": "piccolo",
       "sex": "Maschio",
       "birth": "1900-04-24",
-      "email": "vincenzo@piccolo.it",
+      "email": "vincenzo@piccolo.com",
       "id": 1
     },
     {
