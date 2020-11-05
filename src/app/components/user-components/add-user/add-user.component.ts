@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -45,7 +46,11 @@ export class AddUserComponent implements OnInit, OnChanges {
       this.create({ firstname, lastname, sex, birth, email });
     }
     else {
-      alert("Qualcosa è andato storto!!!");
+      Swal.fire({
+        icon: 'error',
+        title: 'OPS...',
+        text: 'Qualcosa è andato storto',
+      })
     }
   }
 
@@ -54,12 +59,20 @@ export class AddUserComponent implements OnInit, OnChanges {
     this.userService.create(user).subscribe(
 
       val => {
-        alert(`Utente inserito correttamente`);
+        Swal.fire({
+          icon: 'success',
+          title: 'Perfetto',
+          text: 'Cliente inserito correttamente',
+        })
         this.router.navigate(["/user/listUser"]);
       },
 
       error => {
-        alert('OPS... Si è verificato un errore durante la scrittura');
+        Swal.fire({
+          icon: 'error',
+          title: 'OPS...',
+          text: 'Si è verificato un errore durante la scrittura',
+        })
       },
 
       () => { console.log('Creazione completata'); }
@@ -84,25 +97,47 @@ export class AddUserComponent implements OnInit, OnChanges {
 
   //update a user
   updateBtn(user: User) {
-    if (confirm(`STAI PER AGGIORNARE UTENTE CON ID:${user.id} SEI SICURO?`)) {
-      this.userService
-        .update(this.userForm.value, user.id).subscribe(
-          val => {
-            alert(`UTENTE ID:${user.id} AGGIORNATO`);
-          },
 
-          error => {
-            alert(`OPS... Si è verificato un errore durante l'aggiornamento`);
-          },
+    if (Swal.fire({
+      title: `Stai per aggiornare il cliente con id: ${user.id}.`,
+      text: "SEI SICURO",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#ffc106',
+      cancelButtonColor: '#3085d6',
+      cancelButtonText: 'Annulla',
+      confirmButtonText: 'Si, Aggiorna!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.userService
+          .update(this.userForm.value, user.id).subscribe(
+            val => {
+              Swal.fire(
+                'Cliente Aggiornato correttamente!',
+                'Il Cliente è stato modificato',
+                'success'
+              )
+            },
 
-          () => {
-            console.log('aggiornamento completato');
-            this.router.navigate(["/user/listUser"]);
-          }
-        );
-    }
+            error => {
+              Swal.fire({
+                icon: 'error',
+                title: 'OPS...',
+                text: "Si è verificato un errore durante l'aggiornamento",
+              })
+            },
+
+            () => {
+              console.log('Aggiornamento completato');
+              this.router.navigate(["/user/listUser"]);
+            }
+          );
+
+      }
+    })) { }
 
   }
+
 
   resetForm() {
     this.userForm.reset();

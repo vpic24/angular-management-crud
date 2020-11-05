@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/service/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private userserice: UserService) { }
+  constructor(private userservice: UserService) { }
 
   users: User;
   userDetails: User;
@@ -17,15 +18,35 @@ export class UserComponent implements OnInit {
   spinner: boolean = false;
 
   deleteUser(id: number) {
-    if (confirm(`STAI PER CANCELLARE UTENTE CON ID: ${id}. SEI SICURO`)) {
-      this.userserice
+
+
+    if(Swal.fire({
+      title: `Stai per cancellare il cliente con id: ${id}.`,
+      text: "SEI SICURO",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      cancelButtonText: 'Annulla',
+      confirmButtonText: 'Si, elimina!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.userservice
         .delete(id).subscribe(
           val => {
-            alert(`Utente eliminato correttamente`);
+            Swal.fire(
+              'Cliente eliminato correttamente!',
+              'Il cliente è stato eliminato',
+              'success'
+            )
           },
 
           error => {
-            alert('OPS... Si è verificato un errore durante la cancellazione');
+            Swal.fire({
+              icon: 'error',
+              title: 'OPS...',
+              text: 'Si è verificato un errore durante la scrittura',
+            })
           },
 
           () => {
@@ -33,12 +54,14 @@ export class UserComponent implements OnInit {
             this.fetchData();
           }
         );
-    }
+       
+      }
+    })){}
   }
 
   //get all my products
   fetchData() {
-    this.userserice
+    this.userservice
       .get().subscribe((data: User) => {
         this.users = data;
         this.spinner = true;

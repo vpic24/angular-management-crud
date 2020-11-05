@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/app/models/product";
-
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -22,15 +22,34 @@ export class ListDishComponent implements OnInit {
 
   //delete a product  
   deleteProduct(id: number) {
-    if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id}. SEI SICURO`)) {
-      this.productService
+
+    if(Swal.fire({
+      title: `Stai per eliminare il piatto con id: ${id}.`,
+      text: "SEI SICURO",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      cancelButtonText: 'Annulla',
+      confirmButtonText: 'Si, elimina!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.productService
         .delete(id).subscribe(
           val => {
-            alert(`Prodotto eliminato correttamente`);
+            Swal.fire(
+              'Prodotto eliminato correttamente!',
+              'Il piatto è stato eliminato',
+              'success'
+            )
           },
 
           error => {
-            alert('OPS... Si è verificato un errore durante la cancellazione');
+            Swal.fire({
+              icon: 'error',
+              title: 'OPS...',
+              text: 'Si è verificato un errore durante la scrittura',
+            })
           },
 
           () => {
@@ -38,7 +57,9 @@ export class ListDishComponent implements OnInit {
             this.fetchData();
           }
         );
-    }
+       
+      }
+    })){}
   }
 
   //get all my products

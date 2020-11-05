@@ -3,6 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/service/product.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-add-dish',
@@ -42,7 +45,11 @@ export class AddDishComponent implements OnInit, OnChanges {
       this.create({ name, desc, type, price });
     }
     else {
-      alert("Qualcosa è andato storto!!!");
+      Swal.fire({
+        icon: 'error',
+        title: 'OPS...',
+        text: 'Qualcosa è andato storto',
+      })
     }
   }
 
@@ -51,12 +58,20 @@ export class AddDishComponent implements OnInit, OnChanges {
     this.productService.create(product).subscribe(
 
       val => {
-        alert(`Prodotto inserito correttamente`);
+        Swal.fire({
+          icon: 'success',
+          title: 'Perfetto',
+          text: 'Prodotto inserito correttamente',
+        })
         this.router.navigate(["/dish/listDish"]);
       },
 
       error => {
-        alert('OPS... Si è verificato un errore durante la scrittura');
+        Swal.fire({
+          icon: 'error',
+          title: 'OPS...',
+          text: 'Si è verificato un errore durante la scrittura',
+        })
       },
 
       () => { console.log('Creazione completata'); }
@@ -79,23 +94,43 @@ export class AddDishComponent implements OnInit, OnChanges {
 
   //update a product
   updateBtn(product: Product) {
-    if (confirm(`STAI PER AGGIORNARE IL PRODOTTO CON ID:${product.id} SEI SICURO?`)) {
-      this.productService
+    if(Swal.fire({
+      title: `Stai per aggiornare il piatto con id: ${product.id}.`,
+      text: "SEI SICURO",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#ffc106',
+      cancelButtonColor: '#3085d6',
+      cancelButtonText: 'Annulla',
+      confirmButtonText: 'Si, Aggiorna!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.productService
         .update(this.productForm.value, product.id).subscribe(
           val => {
-            alert(`PIATTO ID:${product.id} AGGIORNATO`);
+            Swal.fire(
+              'Prodotto Aggiornato correttamente!',
+              'Il piatto è stato modificato',
+              'success'
+            )
           },
 
           error => {
-            alert(`OPS... Si è verificato un errore durante l'aggiornamento`);
+            Swal.fire({
+              icon: 'error',
+              title: 'OPS...',
+              text: "Si è verificato un errore durante l'aggiornamento",
+            })
           },
 
           () => {
-            console.log('aggiornamento completato');
+            console.log('Aggiornamento completato');
             this.router.navigate(["/dish/listDish"]);
           }
         );
-    }
+       
+      }
+    })){}
 
   }
 
